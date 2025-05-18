@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selamat Ulang Tahun Ayah</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    color: #fff;
+    user-select: none;
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    margin-bottom: 0.25em;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  button {
+    background: #ff637b;
+    border: none;
+    padding: 1em 3em;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 99, 123, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: #ff3b56;
+    box-shadow: 0 12px 20px rgba(255, 59, 86, 0.7);
+    transform: translateY(-3px);
+  }
+
+  /* Balloon styling */
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.9;
+    animation: floatUp linear infinite;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(-110vh) translateX(40px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Different balloons with colors and positions */
+  .balloon1 {
+    width: 80px;
+    height: 100px;
+    left: 15%;
+    background: #ff6f91;
+    animation-duration: 12s;
+    animation-delay: 0s;
+  }
+
+  .balloon2 {
+    width: 60px;
+    height: 80px;
+    left: 40%;
+    background: #ffc75f;
+    animation-duration: 15s;
+    animation-delay: 4s;
+  }
+
+  .balloon3 {
+    width: 70px;
+    height: 90px;
+    left: 65%;
+    background: #a0e7e5;
+    animation-duration: 13s;
+    animation-delay: 2s;
+  }
+
+  .balloon4 {
+    width: 50px;
+    height: 70px;
+    left: 85%;
+    background: #ff9671;
+    animation-duration: 14s;
+    animation-delay: 6s;
+  }
+
+  /* Balloon string */
+  .string {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 40px;
+    background: #c1440e;
+    left: 50%;
+    margin-left: -1px;
+  }
+</style>
+</head>
+<body>
+  <h1>Selamat Ulang Tahun Ayah!</h1>
+  <p>Semoga panjang umur, sehat selalu, dan bahagia</p>
+  <button id="playBtn">Dengarkan Lagu Ulang Tahun</button>
+
+  <!-- Balloons -->
+  <div class="balloon balloon1"><div class="string"></div></div>
+  <div class="balloon balloon2"><div class="string"></div></div>
+  <div class="balloon balloon3"><div class="string"></div></div>
+  <div class="balloon balloon4"><div class="string"></div></div>
+
+  <audio id="birthdayAudio" src="ultah.mp3" preload="auto"></audio>
+
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const audio = document.getElementById('birthdayAudio');
+
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = 'Putar Ulang Lagu Ulang Tahun';
+      } else {
+        audio.currentTime = 0;
+      }
+    });
+  </script>
+</body>
+</html>
+
